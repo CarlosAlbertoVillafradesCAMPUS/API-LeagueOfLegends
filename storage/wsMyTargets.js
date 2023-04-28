@@ -17,7 +17,7 @@ export let wsMyTargets = {
             <div class="text-center text-white">
                 <h2>${dataChampion.name}</h2>
                 <p>${dataChampion.title}</p>
-                <p>rol: ${dataChampion.tags[0]}</p>
+                <p>rol: ${dataChampion.tags[0]}, ${dataChampion.tags[1]}</p>
                 <button class="btn btn-primary w-100 buttonInfo" id=${dataChampion.id}>mas info</button>
             </div>
         </div>`
@@ -59,13 +59,51 @@ export let wsMyTargets = {
             <div class="text-center text-white">
                 <h2>${dataChampion.name}</h2>
                 <p>${dataChampion.title}</p>
-                <p>rol: ${dataChampion.tags[0]}</p>
+                <p>rol: ${dataChampion.tags[0]}, ${dataChampion.tags[1]}</p>
                 <button class="btn btn-primary w-100 buttonInfo" id=${dataChampion.id}>mas info</button>
             </div>
         </div>`
     });
 return plantilla
+    },
+
+    async filterTanks(info){
+        const dataAPI = await fecthApi.fetchData(info.url)
+    //trasformar el objeto de detaAPI por un array
+    let arrayData = Object.entries(dataAPI.data);
+    let opcion = ""
+    switch (info.opcion) {
+        case "Tanques":
+        opcion = "Tank"
+            break;
+        case "luchadores":
+        opcion = "Fighter"
+            break;
+    
+        default:
+            break;
     }
+    const result = arrayData.filter(champion => champion[1].tags[0] == opcion || champion[1].tags[1] == opcion);
+    let plantilla = "";
+
+    result.forEach((val,id) => {
+        let dataChampion = val[1];
+        plantilla += `
+        <div class="col-5 col-lg-3  p-3 champions">
+            <div>
+                <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${dataChampion.id}_0.jpg" alt="imgChampions">
+            </div>
+            <div class="text-center text-white">
+                <h2>${dataChampion.name}</h2>
+                <p>${dataChampion.title}</p>
+                <p>rol: ${dataChampion.tags[0]}, ${dataChampion.tags[1]}</p>
+                <button class="btn btn-primary w-100 buttonInfo" id=${dataChampion.id}>mas info</button>
+            </div>
+        </div>`
+    });
+    return plantilla
+
+    },
     
 }
 self.addEventListener("message", async (e) => {
