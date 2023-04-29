@@ -1,5 +1,42 @@
+@font-face{
+  font-family: "LOL";
+  src: url(./image/BeaufortforLOL-Bold.otf)
+}
+
 body{
-    background-image: url(./image/LOL_CMS_152_Article_01_dsnpbw97lpr2tcdw6cjm.jpg);
+  background-image: url(./image/fondo.jpg);
+    font-family: "LOL";
+}
+header{
+  background-image: url(./image/fondoHeader.webp);
+  background-size: cover;
+  background-position: center;
+  padding: 10px 0;
+}
+.containerPrincipal{
+  
+}
+.title{
+  width: 30rem;
+}
+.subTitle{
+  font-size: 3rem;
+  margin: 0;
+  color: rgb(0, 0, 0);
+}
+.champions{
+  height: 30rem;
+}
+.champions .info{
+  color: transparent;
+  display: grid;
+  place-content: center;
+}
+.champions .info:hover{
+  color: white;
+  background-color: rgba(0, 0, 0, 0.493);
+  transition: all .5s ease;
+  z-index: 10;
 }
 .modal {
     display: block;

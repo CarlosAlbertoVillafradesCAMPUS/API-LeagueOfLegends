@@ -10,15 +10,16 @@ export let wsMyTargets = {
         for (let i = 20; i < 40; i++) {
             let dataChampion = arrayData[i][1];
         plantilla += `
-        <div class="col-5 col-lg-3  p-3 champions">
-            <div>
-                <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${dataChampion.id}_0.jpg" alt="imgChampions">
-            </div>
-            <div class="text-center text-white">
+        <div class="col-5 col-lg-3 p-2" >
+        <div class="text-center rounded champions"  style="background-image: url(http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${dataChampion.id}_0.jpg);background-size: cover;">
+              <div class="d-flex flex-column justify-content-between pt-3 w-100 h-100 info" >
+                <div>
                 <h2>${dataChampion.name}</h2>
                 <p>${dataChampion.title}</p>
                 <p>rol: ${dataChampion.tags[0]}, ${dataChampion.tags[1]}</p>
+                </div>
                 <button class="btn btn-primary w-100 buttonInfo" id=${dataChampion.id}>mas info</button>
+              </div>   
             </div>
         </div>`
             
@@ -52,15 +53,16 @@ export let wsMyTargets = {
     result.forEach((val,id) => {
         let dataChampion = val[1];
         plantilla += `
-        <div class="col-5 col-lg-3  p-3 champions">
-            <div>
-                <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${dataChampion.id}_0.jpg" alt="imgChampions">
-            </div>
-            <div class="text-center text-white">
+        <div class="col-5 col-lg-3 p-2" >
+        <div class="text-center rounded champions"  style="background-image: url(http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${dataChampion.id}_0.jpg);background-size: cover;">
+              <div class="d-flex flex-column justify-content-between pt-3 w-100 h-100 info" >
+                <div>
                 <h2>${dataChampion.name}</h2>
                 <p>${dataChampion.title}</p>
                 <p>rol: ${dataChampion.tags[0]}, ${dataChampion.tags[1]}</p>
+                </div>
                 <button class="btn btn-primary w-100 buttonInfo" id=${dataChampion.id}>mas info</button>
+              </div>   
             </div>
         </div>`
     });
@@ -71,33 +73,24 @@ return plantilla
         const dataAPI = await fecthApi.fetchData(info.url)
     //trasformar el objeto de detaAPI por un array
     let arrayData = Object.entries(dataAPI.data);
-    let opcion = ""
-    switch (info.opcion) {
-        case "Tanques":
-        opcion = "Tank"
-            break;
-        case "luchadores":
-        opcion = "Fighter"
-            break;
+    let opcion = info.opcion
     
-        default:
-            break;
-    }
     const result = arrayData.filter(champion => champion[1].tags[0] == opcion || champion[1].tags[1] == opcion);
     let plantilla = "";
 
     result.forEach((val,id) => {
         let dataChampion = val[1];
         plantilla += `
-        <div class="col-5 col-lg-3  p-3 champions">
-            <div>
-                <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${dataChampion.id}_0.jpg" alt="imgChampions">
-            </div>
-            <div class="text-center text-white">
+        <div class="col-5 col-lg-3 " >
+        <div class="text-center rounded champions"  style="background-image: url(http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${dataChampion.id}_0.jpg);background-size: cover;">
+              <div class="d-flex flex-column justify-content-between pt-3 w-100 h-100 info" >
+                <div>
                 <h2>${dataChampion.name}</h2>
                 <p>${dataChampion.title}</p>
                 <p>rol: ${dataChampion.tags[0]}, ${dataChampion.tags[1]}</p>
+                </div>
                 <button class="btn btn-primary w-100 buttonInfo" id=${dataChampion.id}>mas info</button>
+              </div>   
             </div>
         </div>`
     });

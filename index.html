@@ -12,27 +12,25 @@
 <body>
     <header>
         <div class="text-center">
-            <h1>League of Legends</h1>
-            <p>Champions</p>
+            <img src="image/title.png" alt="" class="title">
+            <p class="subTitle">CAMPEONES</p>
         </div>
         <nav class="d-flex flex-column justify-content-center">
             <ul class="d-flex justify-content-center" style="list-style: none;">
                 <li class="mx-2"><button class="btn btn-primary" id="All">All</button></li>
-                <li class="mx-2"><button class="btn btn-primary" id="Tanques">Tanques</button></li>
-                <li class="mx-2"><button class="btn btn-primary" id="luchadores">luchadores</button></li>
-                <li class="mx-2"><button class="btn btn-primary" id="Asesinos">Asesinos</button></li>
-                <li class="mx-2"><button class="btn btn-primary" id="Tiradores">Tiradores</button></li>
-                <li class="mx-2"><button class="btn btn-primary" id="Magos">Magos</button></li>   
-                <li class="mx-2"><button class="btn btn-primary" id="soporte">soporte</button></li>      
+                <li class="mx-2"><button class="btn btn-primary" id="Tank">Tanques</button></li>
+                <li class="mx-2"><button class="btn btn-primary" id="Fighter">luchadores</button></li>
+                <li class="mx-2"><button class="btn btn-primary" id="Assassin">Asesinos</button></li>
+                <li class="mx-2"><button class="btn btn-primary" id="Marksman">Tiradores</button></li>
+                <li class="mx-2"><button class="btn btn-primary" id="Mage">Magos</button></li>   
+                <li class="mx-2"><button class="btn btn-primary" id="Support">soporte</button></li>      
             </ul>
-            <div class=" d-flex justify-content-center">
-                <input class="form-control" id="search" type="search" placeholder="Buscar Campeon" style="width: 500px; height: 35px;">
-            </div>
-            
         </nav>
-        
     </header>
-    <div class="container">
+    <div class="container containerPrincipal">
+        <div class=" d-flex justify-content-center my-3">
+            <input class="form-control" id="search" type="search" placeholder="Buscar Campeon" style="width: 500px; height: 35px;">
+        </div>
         <div class="row g-2" id="containerChampions">
             <!-- Aqui iran los campeones -->
 

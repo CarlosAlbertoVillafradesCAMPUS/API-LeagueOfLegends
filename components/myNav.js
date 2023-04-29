@@ -11,17 +11,38 @@ export default {
         })
     },
     championsTanks(){
-        document.querySelector("#Tanques").addEventListener("click", (e) => {
+        //Button tanque
+        document.querySelector("#Tank").addEventListener("click", (e) => {
             let id = e.target.id;
             this.funcionamientoButtons(id)
           
         })
-
-        document.querySelector("#luchadores").addEventListener("click", (e) => {
+        //Button Luchadores
+        document.querySelector("#Fighter").addEventListener("click", (e) => {
             let id = e.target.id;
             this.funcionamientoButtons(id)
-          
         })
+         //Button Luchadores
+         document.querySelector("#Assassin").addEventListener("click", (e) => {
+            let id = e.target.id;
+            this.funcionamientoButtons(id)
+        })
+         //Button Luchadores
+         document.querySelector("#Marksman").addEventListener("click", (e) => {
+            let id = e.target.id;
+            this.funcionamientoButtons(id)
+        })
+         //Button Luchadores
+         document.querySelector("#Mage").addEventListener("click", (e) => {
+            let id = e.target.id;
+            this.funcionamientoButtons(id)
+        })
+         //Button Luchadores
+         document.querySelector("#Support").addEventListener("click", (e) => {
+            let id = e.target.id;
+            this.funcionamientoButtons(id)
+        })
+        
 
     },
     funcionamientoButtons(id){
