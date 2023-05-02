@@ -4,7 +4,7 @@
 }
 
 body{
-  background-image: url(/image/fondo.jpg);
+  background-image: url(./image/fondo.jpg);
   font-family: "LOL";
   margin: 0;
 }
@@ -58,7 +58,7 @@ margin: auto;
   place-content: center;
 }
 .title{
-  width: 32rem;
+  width: 40rem;
 }
 .boton {
   font-size: 1.5rem;
@@ -106,7 +106,7 @@ margin: auto;
   width: 50%;
 }
 .champions{
-  height: 25rem;
+  height: 30rem;
 }
 .champions .info{
   color: transparent;

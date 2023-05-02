@@ -4,7 +4,7 @@ export default {
             document.querySelector(".containerBody").removeAttribute("style");
             document.querySelector(".boton").setAttribute("style","display: none;")
             document.querySelector(".subTitle").removeAttribute("style");
-            window.scrollTo(0, 640);
+            window.scrollTo(0, 1000);
         })
     },
     switch(){

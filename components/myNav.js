@@ -1,6 +1,6 @@
 import myTargets from "./myTargets.js"
 export default {
-    API: "http://ddragon.leagueoflegends.com/cdn/13.8.1/data/es_ES/champion.json",
+    API: "https://ddragon.leagueoflegends.com/cdn/13.8.1/data/es_ES/champion.json",
    selectNav(){
         this.championsAll()
     },

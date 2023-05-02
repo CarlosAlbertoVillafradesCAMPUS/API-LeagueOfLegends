@@ -1,5 +1,5 @@
 export default {
-    API: "http://ddragon.leagueoflegends.com/cdn/13.8.1/data/es_ES/champion.json",
+    API: "https://ddragon.leagueoflegends.com/cdn/13.8.1/data/es_ES/champion.json",
 
     fragmentTargets(){
         const ws = new Worker("storage/wsMyTargets.js", {type:"module"});
