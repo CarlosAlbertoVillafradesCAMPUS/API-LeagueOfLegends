@@ -2,6 +2,7 @@
     "conventionalCommits.scopes": [
         "search",
         "Modal",
-        "Nav"
+        "Nav",
+        "Global"
     ]
 }

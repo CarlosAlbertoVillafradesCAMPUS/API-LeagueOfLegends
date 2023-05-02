@@ -1,49 +1,18 @@
 import myTargets from "./myTargets.js"
 export default {
     API: "http://ddragon.leagueoflegends.com/cdn/13.8.1/data/es_ES/champion.json",
-    buttonsNav(){
-        this.championsAll(),
-        this.championsTanks()
+   selectNav(){
+        this.championsAll()
     },
     championsAll(){
-        document.querySelector("#All").addEventListener("click", (e) => {
-            myTargets.fragmentTargets()
+        document.querySelector("[name='selectCategoria']").addEventListener("change", (e) => {
+            if (e.target.value == "") {
+                myTargets.fragmentTargets()
+            }else {
+                this.funcionamientoButtons(e.target.value)
+            }
+            
         })
-    },
-    championsTanks(){
-        //Button tanque
-        document.querySelector("#Tank").addEventListener("click", (e) => {
-            let id = e.target.id;
-            this.funcionamientoButtons(id)
-          
-        })
-        //Button Luchadores
-        document.querySelector("#Fighter").addEventListener("click", (e) => {
-            let id = e.target.id;
-            this.funcionamientoButtons(id)
-        })
-         //Button Luchadores
-         document.querySelector("#Assassin").addEventListener("click", (e) => {
-            let id = e.target.id;
-            this.funcionamientoButtons(id)
-        })
-         //Button Luchadores
-         document.querySelector("#Marksman").addEventListener("click", (e) => {
-            let id = e.target.id;
-            this.funcionamientoButtons(id)
-        })
-         //Button Luchadores
-         document.querySelector("#Mage").addEventListener("click", (e) => {
-            let id = e.target.id;
-            this.funcionamientoButtons(id)
-        })
-         //Button Luchadores
-         document.querySelector("#Support").addEventListener("click", (e) => {
-            let id = e.target.id;
-            this.funcionamientoButtons(id)
-        })
-        
-
     },
     funcionamientoButtons(id){
         const ws = new Worker("storage/wsMyTargets.js", {type:"module"});
@@ -55,9 +24,9 @@ export default {
             containerChampions.innerHTML = null
             containerChampions.append(...doc.body.children)
             ws.terminate()
-            let buttonsInfo = document.querySelectorAll(".buttonInfo");
-        for (let i = 0; i < buttonsInfo.length; i++) {
-            buttonsInfo[i].addEventListener("click", (e) => {
+            let buttonInfo = document.querySelectorAll(".buttonInfo");
+        for (let i = 0; i < buttonInfo.length; i++) {
+            buttonInfo[i].addEventListener("click", (e) => {
                 myTargets.fragmentModal(e)
             })
             

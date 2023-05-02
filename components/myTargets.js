@@ -11,9 +11,9 @@ export default {
                     containerChampions.innerHTML = null
                     containerChampions.append(...doc.body.children)
             ws.terminate()
-            let buttonsInfo = document.querySelectorAll(".buttonInfo");
-            for (let i = 0; i < buttonsInfo.length; i++) {
-                buttonsInfo[i].addEventListener("click", (e) => {
+            let buttonInfo = document.querySelectorAll(".buttonInfo");
+            for (let i = 0; i < buttonInfo.length; i++) {
+                buttonInfo[i].addEventListener("click", (e) => {
                     this.fragmentModal(e)
                 })
                 
@@ -60,9 +60,9 @@ export default {
                     containerChampions.innerHTML = null
                     containerChampions.append(...doc.body.children)
                     ws.terminate()
-                    let buttonsInfo = document.querySelectorAll(".buttonInfo");
-                    for (let i = 0; i < buttonsInfo.length; i++) {
-                        buttonsInfo[i].addEventListener("click", (e) => {
+                    let buttonInfo = document.querySelectorAll(".buttonInfo");
+                    for (let i = 0; i < buttonInfo.length; i++) {
+                        buttonInfo[i].addEventListener("click", (e) => {
                             this.fragmentModal(e)
                         })
                         

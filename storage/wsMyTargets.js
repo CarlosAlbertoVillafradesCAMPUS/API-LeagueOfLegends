@@ -5,20 +5,23 @@ export let wsMyTargets = {
         //trasformar el objeto de detaAPI por un array
         let arrayData = Object.entries(dataAPI.data);
         console.log(arrayData);
-        let plantilla = ""
+        let plantilla = "";
         console.log(arrayData[9]);
         for (let i = 20; i < 40; i++) {
             let dataChampion = arrayData[i][1];
         plantilla += `
-        <div class="col-5 col-lg-3 p-2" >
+        <div class="col-6 col-lg-3 p-2" >
         <div class="text-center rounded champions"  style="background-image: url(http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${dataChampion.id}_0.jpg);background-size: cover;">
               <div class="d-flex flex-column justify-content-between pt-3 w-100 h-100 info" >
                 <div>
-                <h2>${dataChampion.name}</h2>
-                <p>${dataChampion.title}</p>
-                <p>rol: ${dataChampion.tags[0]}, ${dataChampion.tags[1]}</p>
+                <h2>${dataChampion.name.toUpperCase()}</h2>
+                <p class="fs-5">"${dataChampion.title}"</p>
                 </div>
-                <button class="btn btn-primary w-100 buttonInfo" id=${dataChampion.id}>mas info</button>
+                <div>
+                <p class="fs-5 m-0">Rol:</p>
+                <p class="m-0">${dataChampion.tags[0]} ${(dataChampion.tags[1] == undefined) ?"" :", " + dataChampion.tags[1]}</p>
+                </div>
+                <div class="w-100 fs-5  buttonInfo" id=${dataChampion.id}>Mas Info</div>
               </div>   
             </div>
         </div>`
@@ -53,15 +56,18 @@ export let wsMyTargets = {
     result.forEach((val,id) => {
         let dataChampion = val[1];
         plantilla += `
-        <div class="col-5 col-lg-3 p-2" >
+        <div class="col-6 col-lg-3 p-2" >
         <div class="text-center rounded champions"  style="background-image: url(http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${dataChampion.id}_0.jpg);background-size: cover;">
               <div class="d-flex flex-column justify-content-between pt-3 w-100 h-100 info" >
                 <div>
-                <h2>${dataChampion.name}</h2>
-                <p>${dataChampion.title}</p>
-                <p>rol: ${dataChampion.tags[0]}, ${dataChampion.tags[1]}</p>
+                <h2>${dataChampion.name.toUpperCase()}</h2>
+                <p class="fs-5">"${dataChampion.title}"</p>
                 </div>
-                <button class="btn btn-primary w-100 buttonInfo" id=${dataChampion.id}>mas info</button>
+                <div>
+                <p class="fs-5 m-0">Rol:</p>
+                <p class="m-0">${dataChampion.tags[0]} ${(dataChampion.tags[1] == undefined) ?"" :", " + dataChampion.tags[1]}</p>
+                </div>
+                <div class="w-100 fs-5  buttonInfo" id=${dataChampion.id}>Mas Info</div>
               </div>   
             </div>
         </div>`
@@ -81,15 +87,18 @@ return plantilla
     result.forEach((val,id) => {
         let dataChampion = val[1];
         plantilla += `
-        <div class="col-5 col-lg-3 " >
+        <div class="col-6 col-lg-3 p-2" >
         <div class="text-center rounded champions"  style="background-image: url(http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${dataChampion.id}_0.jpg);background-size: cover;">
               <div class="d-flex flex-column justify-content-between pt-3 w-100 h-100 info" >
                 <div>
-                <h2>${dataChampion.name}</h2>
-                <p>${dataChampion.title}</p>
-                <p>rol: ${dataChampion.tags[0]}, ${dataChampion.tags[1]}</p>
+                <h2>${dataChampion.name.toUpperCase()}</h2>
+                <p class="fs-5">"${dataChampion.title}"</p>
                 </div>
-                <button class="btn btn-primary w-100 buttonInfo" id=${dataChampion.id}>mas info</button>
+                <div>
+                <p class="fs-5 m-0">Rol:</p>
+                <p class="m-0">${dataChampion.tags[0]} ${(dataChampion.tags[1] == undefined) ?"" :", " + dataChampion.tags[1]}</p>
+                </div>
+                <div class="w-100 fs-5  buttonInfo" id=${dataChampion.id}>Mas Info</div>
               </div>   
             </div>
         </div>`
