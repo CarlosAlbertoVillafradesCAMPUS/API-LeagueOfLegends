@@ -4,7 +4,8 @@
 }
 
 body{
-  background-image: url(./image/fondo.jpg);
+  background-image: url(./image/fondoRiven.jpg);
+  background-position: center;
   font-family: "LOL";
   margin: 0;
 }
@@ -58,7 +59,7 @@ margin: auto;
   place-content: center;
 }
 .title{
-  width: 40rem;
+  width: 50rem;
 }
 .boton {
   font-size: 1.5rem;
@@ -90,6 +91,9 @@ margin: auto;
   width: 40%;
   height: 35px;
 }
+.containerPrincipal{
+  
+}
 .categoria{
   color: black;
   font-size: 1.2rem;
@@ -120,7 +124,7 @@ margin: auto;
   z-index: 10;
 }
 .buttonInfo{
-  background-color: rgb(6, 28, 37);
+  background-color:#c8aa6d;
   color: white;
   height: 10%;
   display: flex;
@@ -129,7 +133,7 @@ margin: auto;
   transition: all .5s ease;
 }
 .buttonInfo:Hover{
-  background-color:  rgb(25, 108, 141) ;
+  background-color:#7a5c29  ;
   cursor: pointer;
   transition: all .5s ease;
 }
