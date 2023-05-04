@@ -36,36 +36,35 @@ export let wsMyTargets = {
         let plantilla = `
         <div id="ventanaModal" class="modal">
         <div  class="modal-content bg-transparent" style="position: relative;">
-            <span class="cerrar" style="position: absolute; top: 5px;right: 50%;">&times;</span>
+            <span class="cerrar" style="font-size:2rem; color:#c8aa6e; position: absolute; top: 5px;right: 20%;">x</span>
             <div class="container bg-dark text-white">
                 <div class="row">
-                    <div class="col-2">
-                        <div class="d-flex flex-column justify-content-center">
-                            <div class="d-flex justify-content-center mt-2">
+                    <div class="col-12 col-lg-2 mb-2">
+                        <div class="d-flex justify-content-center">
+                            <div class="mt-2">
                                 <img src="http://ddragon.leagueoflegends.com/cdn/13.9.1/img/champion/${infoChampion.id}.png" alt="" width="130" height="124">
                             </div>
-                            <h2 class="text-center">${infoChampion.name}</h2>
                         </div> 
                     </div>
-                    <div class="col-10 frase">
-                        <div>
-                            <h2>${infoChampion.title}</h2>
+                    <div class="col-12 col-lg-10 mb-2 frase">
+                        <div style="height: 100%; display:flex; justify-content:center; align-items: center;">
+                            <h1 class="fst-italic text-center" style="font-size:3rem ;color:#c8aa6e" >${infoChampion.name}</h1>
                         </div>
                     </div>
                     <div class="col-12 d-flex justify-content-center">
                         <div class="text-white rounded imgStyle" style="background-image: url(http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${infoChampion.id}_0.jpg);">
                             <div class="p-4 p-md-5" style="background-color: rgba(0, 0, 0, 0.4);">
                               <div id="banner" class="col-md-7 px-0">
-                                <h1 class="display-4 fst-italic ">${infoChampion.name}</h1>
-                                <p class="lead my-3 " style="height: 15rem; color:#f0e6d2">${infoChampion.lore}</p>
+                                <h1 class="display-4 fst-italic ">"${infoChampion.title}"</h1>
+                                <p class="lead my-lg-3 fs-6" style=" color:#f0e6d2">${infoChampion.lore}</p>
                                </div>
                             </div>
                           </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-lg-6 mb-3 mb-lg-0">
                         <div class="" style="height: 18rem; overflow: auto;" id="nav">
                             <div class="p-4">
-                              <h3 class="fst-italic text-center" style="color:#c8aa6e" >Habilidades</h3>
+                              <h2 class="fst-italic text-center" style="color:#c8aa6e" >Habilidades</h2>
                               <ol class="list-unstyled d-flex justify-content-center mb-0">
                               <li class="my-4 border-end" style="color:#f0e6d2; width: 25%;">
                               <div class="mb-2 w-100 d-flex justify-content-center">
@@ -100,11 +99,11 @@ export let wsMyTargets = {
                            
                           </div>
                     </div>
-                    <div class="col-6" >
-                        <h2 class="text-center">Skins</h2>
-                        <div class="row" style="height: 18rem; overflow: auto;">
+                    <div class="col-12 col-lg-6" >
+                        <h2 class="fst-italic text-center" style="color:#c8aa6e" >Skins</h2>
+                        <div class="row mb-2" style="height: 18rem; overflow: auto;">
                         ${infoChampion.skins.map((val,id)=>{
-                          let newplantilla = `<div class="col-4 px-2 mb-2 h-100">
+                          let newplantilla = `<div class="col-4 px-2 px-lg-2 mb-2 h-100">
                             <div style="height: 100%; background-image:url(https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${infoChampion.id}_${val.num}.jpg); background-size: cover;">
 
                             </div>

@@ -91,6 +91,9 @@ margin: auto;
   width: 40%;
   height: 35px;
 }
+.lead{
+  height: 15rem;
+}
 .categoria{
   color: black;
   font-size: 1.2rem;
@@ -165,12 +168,10 @@ margin: auto;
     cursor: pointer;
     z-index: 50; */
   }
- /*  .close:hover,
-  .close:focus {
+  .close:hover{
     color: white;
-    text-decoration: none;
     cursor: pointer;
-  } */
+  }
   @media (max-width: 680px) {
     .title{
       width: 23rem;
@@ -178,6 +179,9 @@ margin: auto;
     .switch{
       top: 30px;
       right: 15px;
+    }
+    .modal {
+      padding-top: 0;
     }
     .containerDescription{
       width: 75%;
@@ -187,5 +191,8 @@ margin: auto;
     }
     .champions{
       height: 20rem;
+    }
+    .lead{
+      height: auto;
     }
 }

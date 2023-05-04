@@ -40,7 +40,8 @@ export default {
             })
             //cerrar el modal dando click fuera del modal
             window.addEventListener("click", (e) => {
-                if (e.target.id == "ventanaModal") {
+                console.log(e);
+                if (e.target.classList[0] == "modal-content") {
                     document.querySelector("#containerModal").innerHTML = null
                   }
                 
